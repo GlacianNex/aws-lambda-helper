@@ -1,4 +1,4 @@
-# AWS-Lambda-Helper
+# aws-lambda-exec-helper
 
 Helper library designed to simplify calling AWS lambdas in NodeJS.
 
@@ -13,7 +13,7 @@ It is specifically designed to be used with other AWS lambda functions, however 
 ### Constructor:
 
 ``` js
-const Lambda = require('aws-lambda-helper');
+const Lambda = require('aws-lambda-exec-helper');
 const myLambda = new S3(name, qualifier, profile, awsRegion);
 ```
 
@@ -48,7 +48,7 @@ Returns a promise that will resolve after triggered lambda has executed and resp
 
 ``` js
 exports.handler = (event, context, callback) => {
-    const Lambda = require('aws-lambda-helper');
+    const Lambda = require('aws-lambda-exec-helper');
     const myLambda = new Lambda('my-lambda', 'dev');
 
     myLambda.request({ hello : 'world'}).
