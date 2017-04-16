@@ -1,0 +1,37 @@
+{
+  "name": "aws-lambda-helper",
+  "version": "1.0.0",
+  "description": "Helper library designed to simplify calling AWS lambdas in NodeJS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GlacianNex/aws-lambda-helper.git"
+  },
+  "dependencies": {
+    "aws-sdk" : "*",
+    "q" : "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai" : "*",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3"
+  },
+  "keywords": [
+    "lambda",
+    "aws",
+    "helper"
+  ],
+  "author": "Igor Chernyy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GlacianNex/aws-lambda-helper/issues"
+  },
+  "homepage": "https://github.com/GlacianNex/aws-lambda-helper#readme"
+}
