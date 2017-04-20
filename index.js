@@ -5,21 +5,20 @@ const Q = require('q');
 
 class Lambda {
   constructor(fnName, qualifier, profile, awsRegion) {
-    let credentials = new AWS.EnvironmentCredentials('AWS');
-    if (profile) {
-      credentials = new AWS.SharedIniFileCredentials({ profile });
-    } else if (process.env.AWS_PROFILE) {
-      credentials = new AWS.SharedIniFileCredentials({ profile: process.env.AWS_PROFILE });
-    }
+    const region = awsRegion || process.env.AWS_DEFAULT_REGION;
+    const config = {
+      region,
+    };
 
-    const region = (awsRegion || process.env.AWS_DEFAULT_REGION);
+    if (profile) {
+      const SharedIniFileCredentials = AWS.SharedIniFileCredentials;
+      config.credentials = new SharedIniFileCredentials({
+        profile,
+      });
+    }
 
     this.qualifier = qualifier;
     this.fnName = fnName;
-    this.config = {
-      region,
-      credentials,
-    };
   }
 
   event(payload) {
