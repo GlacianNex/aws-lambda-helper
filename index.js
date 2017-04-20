@@ -6,13 +6,13 @@ const Q = require('q');
 class Lambda {
   constructor(fnName, qualifier, profile, awsRegion) {
     const region = awsRegion || process.env.AWS_DEFAULT_REGION;
-    const config = {
+    this.config = {
       region,
     };
 
     if (profile) {
       const SharedIniFileCredentials = AWS.SharedIniFileCredentials;
-      config.credentials = new SharedIniFileCredentials({
+      this.config.credentials = new SharedIniFileCredentials({
         profile,
       });
     }

@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-exec-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Helper library designed to simplify calling AWS lambdas in NodeJS.",
   "main": "index.js",
   "scripts": {
